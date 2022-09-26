@@ -1,4 +1,4 @@
-import { makeStyles } from '@mui/material';
+import { makeStyles } from '@mui/styles';
 
 const commonStyle = makeStyles(() => ({
   '@global': {
@@ -26,6 +26,9 @@ const commonStyle = makeStyles(() => ({
     },
     '.border-top-1': {
       borderTop: '1px solid var(--admin-gray)',
+    },
+    '.h-full': {
+      height: '100%',
     },
   },
 })) as Function;

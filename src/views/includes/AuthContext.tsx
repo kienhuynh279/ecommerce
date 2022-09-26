@@ -16,6 +16,7 @@ const AuthContext = (props: AuthContextProps) => {
 	if (!!userAuth && matchPath(PageURL.Login, location.pathname)) {
 		return <Navigate to="/" />
 	}
+
 	return (
 		<Fragment>{children}</Fragment>
 	)

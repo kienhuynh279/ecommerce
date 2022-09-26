@@ -3,12 +3,12 @@ import { RootState } from 'types';
 import { AccountState, User } from 'types/models/Account';
 
 const initialState: AccountState = {
-  //   user: {
-  //     user_email: '',
-  //     user_id: '',
-  //     user_name: '',
-  //     user_password: '',
-  //   },
+  // user: {
+  //   user_email: '',
+  //   user_id: '',
+  //   user_name: '',
+  //   user_password: '',
+  // },
   user: null,
 };
 

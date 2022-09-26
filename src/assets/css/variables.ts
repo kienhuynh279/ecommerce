@@ -1,4 +1,5 @@
-import { makeStyles, Theme } from '@mui/material';
+import { Theme } from '@mui/material';
+import { makeStyles } from '@mui/styles';
 
 const variablesStyle = makeStyles((theme: Theme) => ({
   '@global': {
