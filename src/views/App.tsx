@@ -1,5 +1,6 @@
+import { StyledEngineProvider } from '@mui/material';
 import CssBaseline from '@mui/material/CssBaseline';
-import { StyledEngineProvider, ThemeProvider } from '@mui/material/styles';
+import { ThemeProvider } from '@mui/styles';
 import PublicRoute from 'app/navigation/PublicRoute';
 import store from 'app/store';
 import theme from 'app/theme';

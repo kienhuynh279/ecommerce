@@ -1,3 +1,4 @@
+import adminStyle from "assets/css/admin";
 import commonStyle from "assets/css/common";
 import positionStyle from "assets/css/position";
 import textStyle from "assets/css/text";
@@ -9,6 +10,7 @@ const GlobalCss: FC = () => {
   commonStyle();
   textStyle();
   positionStyle();
+  adminStyle();
 
   return null;
 };
