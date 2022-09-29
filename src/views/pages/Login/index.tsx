@@ -1,72 +1,73 @@
-import React, { useState } from 'react'
-import loginStyle, { BoxLogin } from './styled'
-import clsx from 'clsx'
-import { Typography } from '@mui/material'
-import { useForm } from 'react-hook-form'
-import Input from 'views/components/base/Input'
-import FormRow from 'views/components/base/FormRow'
-import * as yup from "yup"
-import { yupResolver } from "@hookform/resolvers/yup";
+import { yupResolver } from '@hookform/resolvers/yup';
+import { Typography } from '@mui/material';
+import clsx from 'clsx';
+import { useState } from 'react';
+import { useForm } from 'react-hook-form';
+import * as yup from 'yup';
+import loginStyle, { BoxLogin, InputLogin } from './styled';
 
-export interface InputLogin {
-	username?: string,
-	password?: string
+export interface IInputLogin {
+  username?: string;
+  password?: string;
 }
 
 const loginSchema = yup.object().shape({
-	username: yup.string().email().required(),
-	password: yup.string().min(8).max(32).required(),
+  username: yup.string().email().required(),
+  password: yup.string().min(8).max(32).required(),
 });
 
 const Login = () => {
-	const classes = loginStyle();
-	const { register, handleSubmit, formState: { errors } } = useForm<InputLogin>({ resolver: yupResolver(loginSchema), })
-	const [dataLogin, setDataLogin] = useState({});
-	const loginClass = clsx("flex-center h-full", classes.page);
+  const classes = loginStyle();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm<IInputLogin>({ resolver: yupResolver(loginSchema) });
+  const [dataLogin, setDataLogin] = useState({});
+  const loginClass = clsx('flex-center h-full', classes.page);
 
-	const onSubmit = (data: InputLogin) => {
-		setDataLogin(data);
-		console.log(dataLogin)
-	};
+  const onHandleSubmit = (data: IInputLogin) => {
+    setDataLogin(data);
+    reset();
+    console.log(dataLogin);
+  };
 
-	return (
-		<div className={loginClass}>
-			<BoxLogin>
-				<div className="px-20 bg-white h-full relative flex-column flex-center">
-					<Typography component='h1' variant='h4'>
-						<span className={classes.titleLogin}>Đăng nhập</span>
-					</Typography>
+  return (
+    <div className={loginClass}>
+      <BoxLogin>
+        <div className="px-20 bg-white h-full relative flex-column flex-center">
+          <Typography component="h1" variant="h4">
+            <span className={classes.titleLogin}>Đăng nhập</span>
+          </Typography>
 
-					<form className={classes.formLogin} onSubmit={handleSubmit(onSubmit)}>
-						<FormRow>
-							<Input
-								{...register("username")}
-								name='username'
-								type="username"
-								label="Tài khoản"
-								placeholder='Nhập tài khoản'
-								size='small'
-								error={!!errors.username}
-							/>
-						</FormRow>
+          <form className={classes.formLogin} onSubmit={handleSubmit(onHandleSubmit)}>
+            <InputLogin
+              {...register('username')}
+              helperText={errors.username?.message}
+              error={!!errors.username}
+              label="Tài khoản"
+              placeholder="Nhập tài khoản"
+              size="small"
+            />
 
-						<FormRow>
-							<Input
-								{...register("password")}
-								name='password'
-								label="Mật Khẩu"
-								type="password"
-								size='small'
-								placeholder='Nhập mật khẩu'
-								error={!!errors.password}
-							/>
-						</FormRow>
-						<input className={classes.btnLogin} type="submit" />
-					</form>
-				</div>
-			</BoxLogin>
-		</div>
-	)
-}
+            <InputLogin
+              {...register('password')}
+              helperText={errors.password?.message}
+              error={!!errors.password}
+              label="Mật khẩu"
+              placeholder="Nhập mật khẩu"
+              size="small"
+            />
 
-export default Login
+            <div></div>
+
+            <input className={classes.btnLogin} type="submit" />
+          </form>
+        </div>
+      </BoxLogin>
+    </div>
+  );
+};
+
+export default Login;
