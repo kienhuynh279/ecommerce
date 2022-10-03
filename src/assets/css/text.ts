@@ -19,6 +19,7 @@ const textStyle = makeStyles(() => ({
     '.text-left': { textAlign: 'left' },
     '.text-right': { textAlign: 'right' },
     '.text-decor': { textDecoration: 'underline' },
+    '.text-italic': { fontStyle: 'italic' },
     '.text-11': { fontSize: '11px!important' },
     '.text-12': { fontSize: '12px!important' },
     '.text-13': { fontSize: '13px!important' },

@@ -11,20 +11,20 @@ const positionStyle = makeStyles(() => ({
     '.inline-block': {
       display: 'inline-block!important',
     },
-    '.grib': {
-      display: 'grid!important',
+    '.grid': {
+      display: 'grid !important',
     },
     '.inline-grib': {
-      display: 'inline-grid!important',
+      display: 'inline-grid !important',
     },
     '.flex': {
       display: 'flex',
     },
     '.flex-inline': {
-      display: 'inline-flex!important',
+      display: 'inline-flex !important',
     },
     '.flex-direction-unset': {
-      flexDirection: 'unset!important',
+      flexDirection: 'unset !important',
     },
     '.flex-column': {
       display: 'flex',
@@ -32,10 +32,10 @@ const positionStyle = makeStyles(() => ({
     },
     '.flex-row': {
       display: 'flex',
-      flexDirection: 'row!important',
+      flexDirection: 'row !important',
     },
     '.flex-center': {
-      display: 'flex!important',
+      display: 'flex !important',
       alignItems: 'center',
       justifyContent: 'center',
     },

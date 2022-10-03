@@ -3,8 +3,7 @@ export interface AccountState {
 }
 
 export interface User {
-  user_id: string;
-  user_name: string;
-  user_email: string;
-  user_password: string;
+  username?: string;
+  password?: string;
+  reminderLogin?: boolean;
 }

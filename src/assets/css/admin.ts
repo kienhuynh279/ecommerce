@@ -4,15 +4,26 @@ import { makeStyles } from '@mui/styles';
 const adminStyle = makeStyles((theme: Theme) => ({
   '@global': {
     '.admin-form-row': {
-      alignItems: 'flex-end',
-
       '& .MuiFormControl-root': {
-        marginBottom: '0!important',
+        marginBottom: '0 !important',
+      },
+
+      '& .MuiFormControlLabel-root': {
+        padding: '0 9px !important',
+
+        '& .MuiCheckbox-root': {
+          padding: '0px 4px 0 0 !important',
+        },
+
+        '& .MuiTypography-root': {
+          fontSize: '14px',
+        },
       },
 
       '& .MuiTextField-root': {
+        width: '100%',
         position: 'relative',
-        marginBottom: '18px!important',
+        marginBottom: '32px !important',
       },
 
       '& .MuiFormHelperText-root': {
@@ -20,8 +31,9 @@ const adminStyle = makeStyles((theme: Theme) => ({
         bottom: '-25px',
         margin: 0,
       },
+
       '& .error': {
-        marginBottom: '31px!important',
+        marginBottom: '31px !important',
       },
     },
   },

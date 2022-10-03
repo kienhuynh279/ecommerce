@@ -30,6 +30,9 @@ const commonStyle = makeStyles(() => ({
     '.h-full': {
       height: '100%',
     },
+    '.btn': {
+      marginBottom: '20px',
+    },
   },
 })) as Function;
 

@@ -22,6 +22,8 @@ const AuthSlice = createSlice({
   },
 });
 
+export const handleLogin = AuthSlice.actions.login;
+
 export const getUserAuth = (state: RootState) => state.auth.user;
 
 const AuthReducer = AuthSlice.reducer;

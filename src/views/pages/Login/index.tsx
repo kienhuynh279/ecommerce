@@ -1,19 +1,23 @@
 import { yupResolver } from '@hookform/resolvers/yup';
-import { Typography } from '@mui/material';
+import { Checkbox, FormControlLabel, Typography } from '@mui/material';
 import clsx from 'clsx';
-import { useState } from 'react';
+import { handleLogin } from 'features/auth/slice';
 import { useForm } from 'react-hook-form';
+import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
+import FormRow from 'views/components/base/FormRow';
 import * as yup from 'yup';
 import loginStyle, { BoxLogin, InputLogin } from './styled';
 
 export interface IInputLogin {
   username?: string;
   password?: string;
+  reminderLogin?: boolean;
 }
 
 const loginSchema = yup.object().shape({
-  username: yup.string().email().required(),
-  password: yup.string().min(8).max(32).required(),
+  username: yup.string().required("Nhập tài khoản"),
+  password: yup.string().min(8).required("Nhập mật khẩu"),
 });
 
 const Login = () => {
@@ -22,15 +26,13 @@ const Login = () => {
     register,
     handleSubmit,
     formState: { errors },
-    reset,
   } = useForm<IInputLogin>({ resolver: yupResolver(loginSchema) });
-  const [dataLogin, setDataLogin] = useState({});
   const loginClass = clsx('flex-center h-full', classes.page);
 
-  const onHandleSubmit = (data: IInputLogin) => {
-    setDataLogin(data);
-    reset();
-    console.log(dataLogin);
+  const dispatch = useDispatch()
+
+  const onHandleLogin = async (data: IInputLogin) => {
+    dispatch(handleLogin(data))
   };
 
   return (
@@ -41,28 +43,37 @@ const Login = () => {
             <span className={classes.titleLogin}>Đăng nhập</span>
           </Typography>
 
-          <form className={classes.formLogin} onSubmit={handleSubmit(onHandleSubmit)}>
-            <InputLogin
-              {...register('username')}
-              helperText={errors.username?.message}
-              error={!!errors.username}
-              label="Tài khoản"
-              placeholder="Nhập tài khoản"
-              size="small"
-            />
+          <form className={classes.formLogin} onSubmit={handleSubmit(onHandleLogin)}>
+            <FormRow>
+              <InputLogin
+                {...register('username', { required: 'Required' })}
+                helperText={errors.username?.message}
+                error={!!errors.username}
+                className='mb-5'
+                label="Tài khoản"
+                placeholder="Nhập tài khoản"
+                size="small"
+              />
+            </FormRow>
 
-            <InputLogin
-              {...register('password')}
-              helperText={errors.password?.message}
-              error={!!errors.password}
-              label="Mật khẩu"
-              placeholder="Nhập mật khẩu"
-              size="small"
-            />
+            <FormRow>
+              <InputLogin
+                {...register('password')}
+                helperText={errors.password?.message}
+                className='mb-5'
+                error={!!errors.password}
+                label="Mật khẩu"
+                placeholder="Nhập mật khẩu"
+                size="small"
+              />
+            </FormRow>
 
-            <div></div>
+            <FormRow className='flex justify-between'>
+              <FormControlLabel control={<Checkbox {...register('reminderLogin')} size='small' />} label="Ghi nhớ đăng nhập" />
+              <Link className={classes.textForgotPassword} to="#">Quên mật khẩu?</Link>
+            </FormRow>
 
-            <input className={classes.btnLogin} type="submit" />
+            <input className={classes.btnLogin} type="submit" value='Đăng nhập' />
           </form>
         </div>
       </BoxLogin>
