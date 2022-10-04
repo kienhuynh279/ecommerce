@@ -1,8 +1,18 @@
 {
+  "App.Name": "E-commerce Admin",
   "Page": {
     "Login": {
       "Name": "Đăng nhập",
       "ForgotPassword": "Quên mật khẩu?"
+    },
+    "Dashboard": {
+      "Name": "Thống kê"
+    },
+    "Product": {
+      "Name": "Quản lý sản phẩm"
+    },
+    "Category": {
+      "Name": "Danh mục sản phẩm"
     }
   },
   "Button": {

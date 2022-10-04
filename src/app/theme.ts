@@ -19,9 +19,9 @@ const theme = createTheme({
     MuiAppBar: {
       styleOverrides: {
         root: {
-          backgroundColor: 'var(--mscb-white)',
-          left: 'var(--mscb-sidebar-width)',
-          width: 'calc(100% - var(--mscb-sidebar-width))',
+          backgroundColor: 'var(--admin-background-root)',
+          left: 'var(--admin-sidebar-width)',
+          width: 'calc(100% - var(--admin-sidebar-width))',
         },
       },
     },

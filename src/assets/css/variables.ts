@@ -9,6 +9,7 @@ const variablesStyle = makeStyles((theme: Theme) => ({
       '--admin-danger': theme.palette.error.main,
       '--admin-success': theme.palette.success.main,
       '--admin-warning': theme.palette.warning.main,
+      '--admin-background-root': '#F5F7FF',
       '--admin-gray': '#eeeff5',
       '--admin-yellow': '#f8ad08',
       '--admin-pink': '#5b6bff',

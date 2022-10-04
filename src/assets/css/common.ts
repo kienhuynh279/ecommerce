@@ -9,7 +9,7 @@ const commonStyle = makeStyles(() => ({
       overflow: 'hidden',
       color: 'var(--admin-secondary)',
       fontSize: 'var(--admin-fontsize)',
-      backgroundColor: 'var(--admin-gray)',
+      backgroundColor: 'var(--admin-background-root)',
     },
     '.wh-full': {
       width: '100%',

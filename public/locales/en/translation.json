@@ -1,8 +1,12 @@
 {
+  "App.Name": "E-commerce Admin",
   "Page": {
     "Login": {
       "Name": "Login",
       "ForgotPassword": "Forgot Password?"
+    },
+    "Dashboard": {
+      "Name": "Dashboard"
     }
   },
   "Button": {
