@@ -3,9 +3,11 @@ import { Checkbox, FormControlLabel, Typography } from '@mui/material';
 import clsx from 'clsx';
 import { handleLogin } from 'features/auth/slice';
 import { useForm } from 'react-hook-form';
+import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import FormRow from 'views/components/base/FormRow';
+import Language from 'views/components/layout/Language';
 import * as yup from 'yup';
 import loginStyle, { BoxLogin, InputLogin } from './styled';
 
@@ -21,6 +23,7 @@ const loginSchema = yup.object().shape({
 });
 
 const Login = () => {
+  const { t } = useTranslation()
   const classes = loginStyle();
   const {
     register,
@@ -40,7 +43,7 @@ const Login = () => {
       <BoxLogin>
         <div className="px-20 bg-white h-full relative flex-column flex-center">
           <Typography component="h1" variant="h4">
-            <span className={classes.titleLogin}>Đăng nhập</span>
+            <span className={classes.titleLogin}>{t("Page.Login.Name")}</span>
           </Typography>
 
           <form className={classes.formLogin} onSubmit={handleSubmit(onHandleLogin)}>
@@ -50,8 +53,8 @@ const Login = () => {
                 helperText={errors.username?.message}
                 error={!!errors.username}
                 className='mb-5'
-                label="Tài khoản"
-                placeholder="Nhập tài khoản"
+                label={t("Input.Username")}
+                placeholder={t("Input.PlaceHolder.Username")}
                 size="small"
               />
             </FormRow>
@@ -62,20 +65,24 @@ const Login = () => {
                 helperText={errors.password?.message}
                 className='mb-5'
                 error={!!errors.password}
-                label="Mật khẩu"
-                placeholder="Nhập mật khẩu"
+                label={t("Input.Password")}
+                placeholder={t("Input.PlaceHolder.Password")}
                 size="small"
               />
             </FormRow>
 
             <FormRow className='flex justify-between'>
-              <FormControlLabel control={<Checkbox {...register('reminderLogin')} size='small' />} label="Ghi nhớ đăng nhập" />
-              <Link className={classes.textForgotPassword} to="#">Quên mật khẩu?</Link>
+              <FormControlLabel control={<Checkbox {...register('reminderLogin')} size='small' />} label={t("Input.RememderLogin")} />
+              <Link className={classes.textForgotPassword} to="#">{t("Page.Login.ForgotPassword")}</Link>
             </FormRow>
 
-            <input className={classes.btnLogin} type="submit" value='Đăng nhập' />
+            <input className={classes.btnLogin} type="submit" value={t("Button.Login")} />
           </form>
+          <div className="flex-center mt-5">
+            <Language />
+          </div>
         </div>
+
       </BoxLogin>
     </div>
   );

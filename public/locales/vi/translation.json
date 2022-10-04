@@ -1,0 +1,20 @@
+{
+  "Page": {
+    "Login": {
+      "Name": "Đăng nhập",
+      "ForgotPassword": "Quên mật khẩu?"
+    }
+  },
+  "Button": {
+    "Login": "Đăng nhập"
+  },
+  "Input": {
+    "Username": "Tài khoản",
+    "Password": "Mật khẩu",
+    "RememderLogin": "Ghi nhớ đăng nhập",
+    "PlaceHolder": {
+      "Username": "Nhập mật khẩu",
+      "Password": "Nhập Password"
+    }
+  }
+}

@@ -5,6 +5,7 @@ import spacingStyle from "assets/css/spacing";
 import textStyle from "assets/css/text";
 import variablesStyle from "assets/css/variables";
 import { FC, memo } from "react";
+import '../../assets/css/vendor'
 
 const GlobalCss: FC = () => {
   variablesStyle();

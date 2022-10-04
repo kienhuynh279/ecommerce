@@ -1,0 +1,20 @@
+{
+  "Page": {
+    "Login": {
+      "Name": "Login",
+      "ForgotPassword": "Forgot Password?"
+    }
+  },
+  "Button": {
+    "Login": "Login"
+  },
+  "Input": {
+    "Username": "Username",
+    "Password": "Password",
+    "RememderLogin": "Rememder Login",
+    "PlaceHolder": {
+      "Username": "Enter username",
+      "Password": "Enter password"
+    }
+  }
+}
