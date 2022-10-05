@@ -1,8 +1,8 @@
 import PageURL from 'app/PageURL';
-import { Route } from 'types/route';
+import { IRoute } from 'types/route';
 import Login from 'views/pages/Login';
 
-const PublicRoute: Route[] = [
+const PublicRoute: IRoute[] = [
   {
     path: PageURL.Login,
     element: Login,

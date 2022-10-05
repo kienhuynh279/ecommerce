@@ -1,10 +1,10 @@
 import { FC } from 'react';
-import { Route } from 'types';
+import { IRoute } from 'types';
 import MuiIcon from '@mui/material/Icon';
 import CircleIcon from '@mui/icons-material/Circle';
 
 export interface IconProps {
-	item: Route;
+	item: IRoute;
 }
 
 const Icon: FC<IconProps> = props => {

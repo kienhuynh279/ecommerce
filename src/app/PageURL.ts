@@ -1,8 +1,10 @@
 const PageURL = {
+  BASE: '/',
+
   Dashboard: '/',
   Login: '/login',
 
-  Product: '/product',
+  Product: 'product',
   Category: '/category',
 };
 

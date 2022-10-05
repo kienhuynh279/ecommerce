@@ -3,18 +3,18 @@ import { useTranslation } from 'react-i18next';
 import { matchPath, useLocation } from 'react-router-dom';
 import clsx from 'clsx';
 import ButtonBase from '@mui/material/ButtonBase';
-import { Route } from 'types';
+import { IRoute } from 'types';
 import IconNav from './IconNav';
 import Icon from './Icon';
 
 export interface PanelProps {
 	classPanel?: string;
-	item: Route;
+	item: IRoute;
 	prefix?: string;
 	children?: ReactNode
 }
 
-const getChildrenPath = (item: Route, prefix: string): string[] => {
+const getChildrenPath = (item: IRoute, prefix: string): string[] => {
 	let rs: string[] = [];
 	item.children?.map(i => {
 		i.path && rs.push((prefix + '/' + (item.path ?? '') + '/' + (i.path ?? '')).replace(/\/\/+/g, '/'));
@@ -43,7 +43,7 @@ const Panel: FC<PanelProps> = props => {
 		setPrefixDefault(prefix);
 	}, [prefix])
 
-	const checkMatchPaths = useCallback((_item: Route) => {
+	const checkMatchPaths = useCallback((_item: IRoute) => {
 		const paths = getChildrenPath(_item, prefixDefault);
 		item.path && paths.push(item.path);
 		const matchs = paths.map(p => !!matchPath(('/' + p + '/*').replace(/\/\//g, ''), pathname));
@@ -84,7 +84,7 @@ const Panel: FC<PanelProps> = props => {
 		if (!panelRef.current) return;
 		calculateHeight(panelRef.current);
 		// fixSidebar();
-		setCollapsed(!checkMatchPaths(item as Route));
+		setCollapsed(!checkMatchPaths(item as IRoute));
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [pathname, calculateHeight]);
 

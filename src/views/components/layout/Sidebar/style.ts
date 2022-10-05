@@ -181,6 +181,120 @@ const sidebarStyle = makeStyles(() => ({
       },
     },
   },
+  '@global': {
+    '.admin-sidebar-collapsed': {
+      '& .admin-content-wrapper': {
+        width: 'calc(100% - var(--admin-sidebar-collapsed-width))',
+        marginLeft: 'var(--admin-sidebar-collapsed-width)',
+      },
+
+      '& .admin-topbar': {
+        width: 'calc(100% - var(--admin-sidebar-collapsed-width))',
+        left: 'var(--admin-sidebar-collapsed-width)',
+      },
+
+      '& .admin-sidebar-brand': {
+        '& img': {
+          width: '30px',
+        },
+      },
+
+      '& .admin-sidebar-navbar-name': {
+        display: 'none',
+      },
+
+      '& .admin-sidebar-icon': {
+        marginRight: 0,
+      },
+
+      '& .admin-sidebar-branch': {
+        height: 0,
+        overflow: 'hidden',
+      },
+
+      '& .admin-sidebar-avatar': {
+        width: '34px !important',
+        height: '34px !important',
+      },
+
+      '& .admin-sidebar-user-info': {
+        pointerEvents: 'none',
+
+        '&>div': {
+          height: 0,
+          width: 0,
+          overflow: 'hidden',
+        },
+      },
+
+      '& .admin-sidebar-copyright': {
+        display: 'none!important',
+      },
+
+      '& .admin-sidebar-navbar': {
+        height: 'calc(100% - var(--admin-topbar-height) - 34px)',
+      },
+
+      '& .item-arrow': {
+        opacity: 0,
+        pointerEvents: 'none',
+      },
+
+      '& .submenu': {
+        '& .submenu': {
+          marginLeft: 'calc(0px - var(--admin-sidebar-padding))!important',
+        },
+      },
+
+      '& .admin-sidebar': {
+        width: 'var(--admin-sidebar-collapsed-width)',
+
+        '&:hover': {
+          width: 'var(--admin-sidebar-width)',
+
+          '& .admin-sidebar-navbar': {
+            height: 'calc(100% - var(--admin-topbar-height) - 151px)',
+          },
+
+          '& .admin-sidebar-brand': {
+            '& img': {
+              width: 'auto',
+            },
+          },
+
+          '& .admin-sidebar-navbar-name': {
+            display: 'block',
+          },
+
+          '& .admin-sidebar-icon': {
+            marginRight: '8px',
+          },
+
+          '& .admin-sidebar-user-info': {
+            '&>div': {
+              height: 'auto',
+              width: '100%',
+              overflow: 'hidden',
+            },
+          },
+
+          '& .item-arrow': {
+            opacity: 1,
+          },
+
+          '& .submenu': {
+            '& .submenu': {
+              marginLeft: '0!important',
+            },
+          },
+
+          '& .admin-sidebar-copyright': {
+            display: 'flex!important',
+          },
+        },
+      },
+    },
+  },
 }));
 
 export default sidebarStyle;

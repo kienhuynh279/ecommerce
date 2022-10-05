@@ -1,6 +1,6 @@
 import PrivateRoute from 'app/navigation/PrivateRoute';
 import { FC } from 'react';
-import { Route } from 'types';
+import { IRoute } from 'types';
 import Nav from './Nav';
 import Panel from './Panel';
 
@@ -14,7 +14,7 @@ const Navbar: FC<NavbarProps> = props => {
 	// const { t } = useTranslation();
 	// const  path  = useLocation();
 
-	const renderLevels = (data: Route[]) => {
+	const renderLevels = (data: IRoute[]) => {
 		return data.map((item, index) => {
 			if (item.isRoute) return null;
 

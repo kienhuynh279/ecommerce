@@ -1,13 +1,13 @@
 import { FC } from 'react';
 import { NavLink } from 'react-router-dom';
-import { Route } from 'types';
+import { IRoute } from 'types';
 import { useTranslation } from 'react-i18next';
 import ButtonBase from '@mui/material/ButtonBase';
 import Icon from './Icon';
 // import Icon from './Icon';
 
 export interface NavProps {
-	item: Route;
+	item: IRoute;
 }
 
 const Nav: FC<NavProps> = props => {

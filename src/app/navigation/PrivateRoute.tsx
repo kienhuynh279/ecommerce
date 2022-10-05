@@ -1,12 +1,12 @@
 import PageURL from 'app/PageURL';
 import { lazy } from 'react';
-import { Route } from 'types/route';
+import { IRoute } from 'types/route';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import CategoryIcon from '@mui/icons-material/Category';
 import DescriptionIcon from '@mui/icons-material/Description';
 import CodeIcon from '@mui/icons-material/Code';
 
-const PrivateRoute: Route[] = [
+const PrivateRoute: IRoute[] = [
   {
     name: 'Page.Dashboard.Name',
     path: PageURL.Dashboard,
@@ -17,13 +17,13 @@ const PrivateRoute: Route[] = [
     name: 'Page.Product.Name',
     path: PageURL.Product,
     icon: <DescriptionIcon />,
-    element: lazy(() => import('views/pages/Dashboard')),
+    element: lazy(() => import('views/pages/Product')),
   },
   {
     name: 'Page.Category.Name',
     path: PageURL.Category,
     icon: <CategoryIcon />,
-    element: lazy(() => import('views/pages/Dashboard')),
+    element: lazy(() => import('views/pages/Category')),
   },
   {
     name: "Developer",
@@ -31,12 +31,12 @@ const PrivateRoute: Route[] = [
     children: [
       {
         name: "Component Button",
-        element: lazy(() => import('views/pages/Dashboard')),
+        element: lazy(() => import('views/pages/Developer/Button')),
         path: "user-group",
       },
       {
         name: "Component Table",
-        element: lazy(() => import('views/pages/Dashboard')),
+        element: lazy(() => import('views/pages/Developer/Table')),
         path: "user-group",
       },
     ]

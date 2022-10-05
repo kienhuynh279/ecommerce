@@ -5,8 +5,8 @@ export interface Badge {
   value: string;
 }
 
-export interface Route {
-  children?: Route[];
+export interface IRoute {
+  children?: IRoute[];
   icon?: ReactNode;
   name?: string;
   path?: string;
