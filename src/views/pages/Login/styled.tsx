@@ -36,7 +36,7 @@ const loginStyle = makeStyles(() => ({
     backgroundColor: 'var(--admin-primary)',
     color: '#fff',
     fontSize: '16px',
-    cursor: 'pointer'
+    cursor: 'pointer',
   },
 
   input: {
@@ -47,8 +47,8 @@ const loginStyle = makeStyles(() => ({
   textForgotPassword: {
     textDecoration: 'none',
     fontStyle: 'italic',
-    fontSize: '14px'
-  }
+    fontSize: '14px',
+  },
 }));
 
 export const BoxLogin = styled(Box)(() => ({
@@ -64,7 +64,7 @@ export const InputLogin = styled(TextField)(() => ({
   '.MuiFormHelperText-root': {
     margin: '2px 0px',
     fontSize: '12px',
-  }
+  },
 }));
 
 export default loginStyle;

@@ -18,12 +18,12 @@ export interface IInputLogin {
 }
 
 const loginSchema = yup.object().shape({
-  username: yup.string().required("Nhập tài khoản"),
-  password: yup.string().min(8).required("Nhập mật khẩu"),
+  username: yup.string().required('Nhập tài khoản'),
+  password: yup.string().min(8).required('Nhập mật khẩu'),
 });
 
 const Login = () => {
-  const { t } = useTranslation()
+  const { t } = useTranslation();
   const classes = loginStyle();
   const {
     register,
@@ -32,10 +32,10 @@ const Login = () => {
   } = useForm<IInputLogin>({ resolver: yupResolver(loginSchema) });
   const loginClass = clsx('flex-center h-full', classes.page);
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const onHandleLogin = async (data: IInputLogin) => {
-    dispatch(handleLogin(data))
+    dispatch(handleLogin(data));
   };
 
   return (
@@ -43,7 +43,7 @@ const Login = () => {
       <BoxLogin>
         <div className="px-20 bg-white h-full relative flex-column flex-center">
           <Typography component="h1" variant="h4">
-            <span className={classes.titleLogin}>{t("Page.Login.Name")}</span>
+            <span className={classes.titleLogin}>{t('Page.Login.Name')}</span>
           </Typography>
 
           <form className={classes.formLogin} onSubmit={handleSubmit(onHandleLogin)}>
@@ -52,9 +52,9 @@ const Login = () => {
                 {...register('username', { required: 'Required' })}
                 helperText={errors.username?.message}
                 error={!!errors.username}
-                className='mb-5'
-                label={t("Input.Username")}
-                placeholder={t("Input.PlaceHolder.Username")}
+                className="mb-5"
+                label={t('Input.Username')}
+                placeholder={t('Input.PlaceHolder.Username')}
                 size="small"
               />
             </FormRow>
@@ -63,26 +63,30 @@ const Login = () => {
               <InputLogin
                 {...register('password')}
                 helperText={errors.password?.message}
-                className='mb-5'
+                className="mb-5"
                 error={!!errors.password}
-                label={t("Input.Password")}
-                placeholder={t("Input.PlaceHolder.Password")}
+                label={t('Input.Password')}
+                placeholder={t('Input.PlaceHolder.Password')}
                 size="small"
               />
             </FormRow>
 
-            <FormRow className='flex justify-between'>
-              <FormControlLabel control={<Checkbox {...register('reminderLogin')} size='small' />} label={t("Input.RememderLogin")} />
-              <Link className={classes.textForgotPassword} to="#">{t("Page.Login.ForgotPassword")}</Link>
+            <FormRow className="flex justify-between">
+              <FormControlLabel
+                control={<Checkbox {...register('reminderLogin')} size="small" />}
+                label={t('Input.RememderLogin')}
+              />
+              <Link className={classes.textForgotPassword} to="#">
+                {t('Page.Login.ForgotPassword')}
+              </Link>
             </FormRow>
 
-            <input className={classes.btnLogin} type="submit" value={t("Button.Login")} />
+            <input className={classes.btnLogin} type="submit" value={t('Button.Login')} />
           </form>
           <div className="flex-center mt-5">
             <Language />
           </div>
         </div>
-
       </BoxLogin>
     </div>
   );

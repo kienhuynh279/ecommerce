@@ -7,6 +7,12 @@
     },
     "Dashboard": {
       "Name": "Dashboard"
+    },
+    "Product": {
+      "Name": "Product Manager"
+    },
+    "Category": {
+      "Name": "Category"
     }
   },
   "Button": {
