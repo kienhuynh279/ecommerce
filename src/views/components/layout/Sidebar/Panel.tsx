@@ -62,28 +62,28 @@ const Panel: FC<PanelProps> = props => {
 		}
 	}, []);
 
-	// const fixSidebar = useCallback(() => {
-	// 	const panelChildren = panelRef.current?.children ?? [];
-	// 	for (let child of panelChildren) {
-	// 		let href = child.getAttribute('href');
-	// 		if (
-	// 			href
-	// 			&& href !== '/'
-	// 			&& pathname !== '/'
-	// 			&& matchPath(href, pathname)
-	// 			// matchPath(pathname, { path: href, exact: false })
-	// 		) {
-	// 			calculateHeight(panelRef.current as HTMLDivElement);
-	// 			// setCollapsed(false);
-	// 		}
-	// 	}
-	// 	// eslint-disable-next-line react-hooks/exhaustive-deps
-	// }, [pathname]);
+	const fixSidebar = useCallback(() => {
+		const panelChildren: any = panelRef.current?.children ?? [];
+		for (let child of panelChildren) {
+			let href = child.getAttribute('href');
+			if (
+				href
+				&& href !== '/'
+				&& pathname !== '/'
+				&& matchPath(href, pathname)
+				// matchPath(pathname, { path: href, exact: false })
+			) {
+				calculateHeight(panelRef.current as HTMLDivElement);
+				// setCollapsed(false);
+			}
+		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [pathname]);
 
 	useEffect(() => {
 		if (!panelRef.current) return;
 		calculateHeight(panelRef.current);
-		// fixSidebar();
+		fixSidebar();
 		setCollapsed(!checkMatchPaths(item as IRoute));
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [pathname, calculateHeight]);

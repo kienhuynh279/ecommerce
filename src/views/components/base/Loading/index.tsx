@@ -1,11 +1,12 @@
+import { Box, CircularProgress } from '@mui/material'
 import React from 'react'
 
 type Props = {}
 
 const Loading = (props: Props) => {
-	return (
-		<div>Loading</div>
-	)
+	return <Box sx={{ display: 'flex' }}>
+		<CircularProgress />
+	</Box>
 }
 
 export default Loading

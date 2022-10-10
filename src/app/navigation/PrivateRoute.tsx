@@ -32,12 +32,12 @@ const PrivateRoute: IRoute[] = [
       {
         name: "Component Button",
         element: lazy(() => import('views/pages/Developer/Button')),
-        path: "user-group",
+        path: PageURL.Develop.Button,
       },
       {
         name: "Component Table",
         element: lazy(() => import('views/pages/Developer/Table')),
-        path: "user-group",
+        path: PageURL.Develop.Table,
       },
     ]
   },

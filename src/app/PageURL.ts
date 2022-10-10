@@ -4,8 +4,13 @@ const PageURL = {
   Dashboard: '/',
   Login: '/login',
 
-  Product: 'product',
+  Product: '/product',
   Category: '/category',
+
+  Develop: {
+    Button: '/develop/button',
+    Table: '/develop/table',
+  },
 };
 
 export default PageURL;

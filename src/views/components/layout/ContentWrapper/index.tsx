@@ -20,11 +20,9 @@ const ContentWrapper: FC = () => {
       }
 
       if (!path && children?.length) {
-        return (
-          <Route key={i} path="*" element={Comp ? <Comp /> : <Outlet />}>
-            {listenRoutes(children)}
-          </Route>
-        );
+        return <Route key={i} path="/" element={Comp ? <Comp /> : <Outlet />}>
+          {listenRoutes(children)}
+        </Route>
       }
 
       routePath = path.replace(/\/?(\?.*)*$/g, '/*$1').replace(/\/\*\/\*?/, '/');
