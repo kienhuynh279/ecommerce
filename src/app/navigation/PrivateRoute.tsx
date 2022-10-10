@@ -41,6 +41,12 @@ const PrivateRoute: IRoute[] = [
       },
     ]
   },
+  {
+    name: 'Page.Category.Name',
+    path: PageURL.Category,
+    icon: <CategoryIcon />,
+    element: lazy(() => import('views/pages/Category')),
+  },
 ];
 
 export default PrivateRoute;

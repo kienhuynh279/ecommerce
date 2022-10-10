@@ -84,13 +84,12 @@ const sidebarStyle = makeStyles(() => ({
       fontSize: '16px',
       height: '50px',
       maxWidth: '100%',
-      marginBottom: '4px',
       textDecoration: 'none',
       color: 'var(--admin-primary)',
+      marginBottom: '4px',
 
       '&.has-submenu': {
-        marginBottom: '0',
-
+        marginBottom: '0px',
         '& .sidebar-navbar-left': {
           width: 'calc(100% - 20px)',
         },
@@ -164,7 +163,7 @@ const sidebarStyle = makeStyles(() => ({
       backgroundColor: 'var(--admin-primary)',
       color: 'var(--admin-white) !important',
       borderRadius: '0 0 9px 9px',
-      marginBottom: '4px',
+      margin: '0 0px 4px 0px',
 
       '& .admin-sidebar-item': {
         color: 'var(--admin-white)',
@@ -172,12 +171,15 @@ const sidebarStyle = makeStyles(() => ({
         '&:hover': {
           backgroundColor: 'var(--admin-white)',
           color: 'var(--admin-primary)',
+          margin: '0 4px 4px 4px',
+          transition: 'all 0.35s ease-in-out',
         },
-      },
 
-      '& .submenu': {
-        marginLeft: '0!important',
-        color: 'var(--admin-white) !important',
+        '&.active': {
+          backgroundColor: 'var(--admin-white)',
+          color: 'var(--admin-primary)',
+          margin: '4px',
+        },
       },
     },
   },
@@ -240,12 +242,6 @@ const sidebarStyle = makeStyles(() => ({
         pointerEvents: 'none',
       },
 
-      '& .submenu': {
-        '& .submenu': {
-          marginLeft: 'calc(0px - var(--admin-sidebar-padding))!important',
-        },
-      },
-
       '& .admin-sidebar': {
         width: 'var(--admin-sidebar-collapsed-width)',
 
@@ -280,12 +276,6 @@ const sidebarStyle = makeStyles(() => ({
 
           '& .item-arrow': {
             opacity: 1,
-          },
-
-          '& .submenu': {
-            '& .submenu': {
-              marginLeft: '0!important',
-            },
           },
 
           '& .admin-sidebar-copyright': {
