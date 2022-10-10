@@ -6,7 +6,6 @@ const topbarStyle = makeStyles((theme: Theme) => ({
     backgroundColor: 'var(--admin-white) !important',
     color: '#353535 !important',
     transition: 'box-shadow 300ms cubic-bezier(0.2, 0, 0.2, 1) 0ms, all ease 0.3s !important',
-
     '& .admin-topbar-toolbar': {
       backgroundColor: 'var(--admin-white) !important',
       marginLeft: 'var(--admin-sidebar-width)',
@@ -17,7 +16,10 @@ const topbarStyle = makeStyles((theme: Theme) => ({
       },
 
       '&.admin-topbar-right': {
-        height: '22px'
+        height: '18px',
+        '&div': {
+          height: '36px'
+        }
       },
 
       '&-box': {

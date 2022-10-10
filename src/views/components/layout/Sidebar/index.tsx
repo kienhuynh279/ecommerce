@@ -5,19 +5,20 @@ import Brand from '../Brand'
 import sidebarStyle from './style'
 import ScrollBar from 'react-perfect-scrollbar';
 import Navbar from './Navbar'
+import SidebarGlobal from './Global'
 
 type Props = {}
 
 const Sidebar = (props: Props) => {
 
 	const classes = sidebarStyle();
-	const sidebarClassname = clsx(classes.root, "fixed left top bottom")
+	const sidebarClassname = clsx(classes.root, "admin-sidebar fixed left top bottom")
 
 	return <div className={sidebarClassname}>
 		<div className="flex-column relative h-full">
 			<Brand />
 
-			<div className={clsx(classes)}>
+			<div className={clsx(classes, 'admin-sidebar-navbar')}>
 				<Box className={clsx('relative')} sx={{
 					height: '100%', '& >div >div:nth-of-type(2)': {
 						display: 'none'
@@ -32,6 +33,7 @@ const Sidebar = (props: Props) => {
 				</Box>
 			</div>
 		</div>
+		<SidebarGlobal />
 	</div >
 }
 

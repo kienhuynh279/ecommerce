@@ -23,7 +23,7 @@ const sidebarStyle = makeStyles(() => ({
 
   panel: {
     overflow: 'hidden',
-    // transition: 'max-height 0.3s cubic-bezier(0, 0, 0.2, 1)',
+    transition: 'max-height 0.3s cubic-bezier(0, 0, 0.2, 1)',
     margin: '0',
   },
 
@@ -178,11 +178,12 @@ const sidebarStyle = makeStyles(() => ({
         '&.active': {
           backgroundColor: 'var(--admin-white)',
           color: 'var(--admin-primary)',
-          margin: '4px',
+          margin: '0 4px 4px 4px',
         },
       },
     },
   },
+
   '@global': {
     '.admin-sidebar-collapsed': {
       '& .admin-content-wrapper': {
@@ -190,9 +191,9 @@ const sidebarStyle = makeStyles(() => ({
         marginLeft: 'var(--admin-sidebar-collapsed-width)',
       },
 
-      '& .admin-topbar': {
+      '&.admin-topbar': {
         width: 'calc(100% - var(--admin-sidebar-collapsed-width))',
-        left: 'var(--admin-sidebar-collapsed-width)',
+        marginLeft: 'var(--admin-sidebar-collapsed-width)',
       },
 
       '& .admin-sidebar-brand': {
@@ -207,6 +208,7 @@ const sidebarStyle = makeStyles(() => ({
 
       '& .admin-sidebar-icon': {
         marginRight: 0,
+        marginLeft: '9px',
       },
 
       '& .admin-sidebar-branch': {
@@ -266,6 +268,10 @@ const sidebarStyle = makeStyles(() => ({
             marginRight: '8px',
           },
 
+          '& .admin-sidebar-non-icon': {
+            marginRight: '8px',
+          },
+
           '& .admin-sidebar-user-info': {
             '&>div': {
               height: 'auto',
@@ -276,6 +282,68 @@ const sidebarStyle = makeStyles(() => ({
 
           '& .item-arrow': {
             opacity: 1,
+          },
+
+          '& .admin-sidebar-copyright': {
+            display: 'flex!important',
+          },
+        },
+      },
+      '&.admin-sidebar-navbar': {
+        height: 'calc(100% - var(--admin-topbar-height) - 34px)',
+      },
+
+      '&.item-arrow': {
+        opacity: 0,
+        pointerEvents: 'none',
+      },
+
+      '& .submenu': {
+        '& .submenu': {
+          marginLeft: 'calc(0px - var(--admin-sidebar-padding))!important',
+        },
+      },
+
+      '&.admin-sidebar': {
+        width: 'var(--admin-sidebar-collapsed-width)',
+
+        '&:hover': {
+          width: 'var(--admin-sidebar-width)',
+
+          '& .admin-sidebar-navbar': {
+            height: 'calc(100% - var(--admin-topbar-height) - 151px)',
+          },
+
+          '& .admin-sidebar-brand': {
+            '& img': {
+              width: 'auto',
+            },
+          },
+
+          '& .admin-sidebar-navbar-name': {
+            display: 'block',
+          },
+
+          '& .admin-sidebar-icon': {
+            marginRight: '8px',
+          },
+
+          '& .admin-sidebar-user-info': {
+            '&>div': {
+              height: 'auto',
+              width: '100%',
+              overflow: 'hidden',
+            },
+          },
+
+          '& .item-arrow': {
+            opacity: 1,
+          },
+
+          '& .submenu': {
+            '& .submenu': {
+              marginLeft: '0!important',
+            },
           },
 
           '& .admin-sidebar-copyright': {

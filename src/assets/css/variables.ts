@@ -17,7 +17,7 @@ const variablesStyle = makeStyles((theme: Theme) => ({
       '--admin-white': '#fff',
       '--admin-fontsize': '14px',
       '--admin-sidebar-width': '288px',
-      '--admin-sidebar-collapsed-width': '70px',
+      '--admin-sidebar-collapsed-width': '90px',
       '--admin-sidebar-padding': '20px',
       '--admin-topbar-height': '66px',
     },
