@@ -1,7 +1,7 @@
 const PageURL = {
   BASE: '/',
 
-  Dashboard: '/',
+  Dashboard: '/dashboard',
   Login: '/login',
 
   Product: '/product',
