@@ -6,9 +6,7 @@ import TopbarCenter from './TopbarCenter';
 import TopbarLeft from './TopbarLeft';
 import TopbarRight from './TopbarRight';
 
-type Props = {};
-
-const Topbar = (props: Props) => {
+const Topbar = () => {
   const classes = topbarStyle();
   const cls = clsx(classes.root, 'admin-topbar');
 

@@ -191,9 +191,9 @@ const sidebarStyle = makeStyles(() => ({
         marginLeft: 'var(--admin-sidebar-collapsed-width)',
       },
 
-      '&.admin-topbar': {
+      '& .admin-topbar': {
         width: 'calc(100% - var(--admin-sidebar-collapsed-width))',
-        marginLeft: 'var(--admin-sidebar-collapsed-width)',
+        left: 'var(--admin-sidebar-collapsed-width)',
       },
 
       '& .admin-sidebar-brand': {
@@ -242,6 +242,12 @@ const sidebarStyle = makeStyles(() => ({
       '& .item-arrow': {
         opacity: 0,
         pointerEvents: 'none',
+      },
+
+      '&.submenu': {
+        '&.submenu': {
+          marginLeft: 'calc(0px - var(--mscb-sidebar-padding))!important',
+        },
       },
 
       '& .admin-sidebar': {

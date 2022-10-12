@@ -52,7 +52,7 @@ export interface SelectComponent extends ForwardRefRenderFunction<SelectRef, Sel
 
 export const SxSelectDisabled: SxBaseApp = {
   "& .Mui-disabled": {
-    WebkitTextFillColor: 'var(--mscb-disable)',
+    WebkitTextFillColor: 'var(--admin-disable)',
     "& .MuiInput-input": {
       backgroundColor: "#d7d8e4 !important",
       color: "#353535",
@@ -126,7 +126,7 @@ const Select: SelectComponent = (props, ref) => {
   }));
 
   const error = Boolean(SelectMessage).valueOf();
-  const selectClass = clsx('mscb-input', className);
+  const selectClass = clsx('admin-input', className);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     if (!handleValidValueBeforeOnChange(e.target.value)) return;
