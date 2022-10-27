@@ -1,12 +1,14 @@
-import { Box, CircularProgress } from '@mui/material'
-import React from 'react'
+import { Box, CircularProgress } from '@mui/material';
+import React from 'react';
 
-type Props = {}
+type Props = {};
 
 const Loading = (props: Props) => {
-	return <Box sx={{ display: 'flex' }}>
-		<CircularProgress />
-	</Box>
-}
+  return (
+    <Box className="wh-full" sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+      <CircularProgress />
+    </Box>
+  );
+};
 
-export default Loading
+export default Loading;
