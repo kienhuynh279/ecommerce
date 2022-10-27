@@ -1,11 +1,23 @@
-import React from 'react'
+import Box from '@mui/material/Box';
+import React from 'react';
+import { BoxOverview, ButtonReport, CardDashboard } from './style';
+import FileDownloadIcon from '@mui/icons-material/FileDownload';
 
-type Props = {}
+type Props = {};
 
 const Dashboard = (props: Props) => {
-	return (
-		<div>Dashboard</div>
-	)
-}
+  return (
+    <CardDashboard>
+      <Box className="w-full flex justify-end items-center">
+        <ButtonReport variant="outlined">
+          Báo cáo
+          <FileDownloadIcon />
+        </ButtonReport>
+      </Box>
 
-export default Dashboard
+      <BoxOverview className="w-full"></BoxOverview>
+    </CardDashboard>
+  );
+};
+
+export default Dashboard;

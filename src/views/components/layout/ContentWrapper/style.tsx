@@ -17,7 +17,7 @@ const wrapperStyle = makeStyles(() => ({
   },
 
   wrapper: {
-    padding: '30px',
+    padding: '16px',
     height: 'auto !important',
     minHeight: '100% !important',
     // overflowX: 'hidden'

@@ -11,3 +11,12 @@ export const getLang = () => {
     window.localStorage.i18nextLng ?? document.querySelector('html')?.lang ?? APP_LANG_DEFAULT.code
   );
 };
+
+export const createResourceId = (): string => {
+  const arr = new Uint8Array(12);
+  globalThis.crypto.getRandomValues(arr);
+  return Array.from(arr, (v) => v.toString(16).padStart(2, '0')).join('');
+};
+
+export const wait = (time: number): Promise<void> => new Promise((res) => setTimeout(res, time));
+

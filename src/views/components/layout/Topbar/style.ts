@@ -22,6 +22,10 @@ const topbarStyle = makeStyles((theme: Theme) => ({
           // left: '48px'
         },
 
+        // '& .admin-topbar-right': {
+        //   height: '26px !important'
+        // },
+
         '& .admin-topbar-center': {
           transform: 'translateX(-48px)',
 

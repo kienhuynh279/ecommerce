@@ -1,7 +1,7 @@
 import PageURL from 'app/PageURL';
-import { getUserAuth } from 'features/auth/slice'
-import React, { lazy } from 'react'
-import { useSelector } from 'react-redux'
+import { getUserAuth } from 'features/auth/slice';
+import React, { lazy } from 'react';
+import { useSelector } from 'react-redux';
 import { Navigate, useLocation } from 'react-router-dom';
 import isNull from 'lodash/isNull';
 
@@ -12,12 +12,10 @@ const Guard = () => {
   const location = useLocation();
 
   if (isNull(userAuth)) {
-    return <Navigate to={{ pathname: PageURL.Login }} state={{ form: location }} />
+    return <Navigate to={{ pathname: PageURL.Login }} state={{ form: location }} />;
   }
 
-  return (
-    <Layout />
-  )
-}
+  return <Layout />;
+};
 
-export default Guard
+export default Guard;

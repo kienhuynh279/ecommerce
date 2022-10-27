@@ -37,7 +37,7 @@ const langStyle = makeStyles(() => ({
     '&.language': {
       '&.outlined': {
         '& .MuiSelect-select': {
-          paddingRight: '30px!important',
+          padding: '0px 36px 0px 20px !important',
           height: '40px!important',
         },
         '& .MuiSelect-root': {

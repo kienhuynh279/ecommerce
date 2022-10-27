@@ -3,9 +3,9 @@ import { Route, Routes, Outlet } from 'react-router-dom';
 import clsx from 'clsx';
 import wrapperStyle from './style';
 import { IRoute } from 'types';
-import ScrollBar from 'react-perfect-scrollbar';
 import PrivateRoute from 'app/navigation/PrivateRoute';
 import Topbar from '../Topbar';
+import Scrollbar from '../Scrollbar';
 
 const ContentWrapper: FC = () => {
   const classes = wrapperStyle();
@@ -20,9 +20,11 @@ const ContentWrapper: FC = () => {
       }
 
       if (!path && children?.length) {
-        return <Route key={i} path="/" element={Comp ? <Comp /> : <Outlet />}>
-          {listenRoutes(children)}
-        </Route>
+        return (
+          <Route key={i} path="/" element={Comp ? <Comp /> : <Outlet />}>
+            {listenRoutes(children)}
+          </Route>
+        );
       }
 
       routePath = path.replace(/\/?(\?.*)*$/g, '/*$1').replace(/\/\*\/\*?/, '/');
@@ -34,12 +36,12 @@ const ContentWrapper: FC = () => {
   return (
     <div className={clsx(classes.root, 'h-full admin-content-wrapper')}>
       <div className="relative wh-full">
-        <ScrollBar>
+        <Scrollbar>
           <Topbar />
           <div className={clsx(classes.wrapper, 'h-full')} id="scroll-bar-content">
             <Routes>{listenRoutes(PrivateRoute)}</Routes>
           </div>
-        </ScrollBar>
+        </Scrollbar>
       </div>
     </div>
   );

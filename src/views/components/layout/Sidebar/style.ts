@@ -5,7 +5,7 @@ const sidebarStyle = makeStyles(() => ({
     backgroundColor: 'var(--admin-white)',
     width: 'var(--admin-sidebar-width)',
     color: '#fff !important',
-    transition: 'all ease 0.3s',
+    // transition: 'all ease 0.3s',
     zIndex: 1200,
 
     '& .admin-sidebar-brand': {

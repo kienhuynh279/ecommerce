@@ -26,20 +26,20 @@ const PrivateRoute: IRoute[] = [
     element: lazy(() => import('views/pages/Category')),
   },
   {
-    name: "Developer",
+    name: 'Developer',
     icon: <CodeIcon />,
     children: [
       {
-        name: "Component Button",
+        name: 'Component Button',
         element: lazy(() => import('views/pages/Developer/Button')),
         path: PageURL.Develop.Button,
       },
       {
-        name: "Component Table",
+        name: 'Component Table',
         element: lazy(() => import('views/pages/Developer/Table')),
         path: PageURL.Develop.Table,
       },
-    ]
+    ],
   },
 ];
 
