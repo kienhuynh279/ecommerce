@@ -41,7 +41,7 @@ const Login = () => {
   return (
     <div className={loginClass}>
       <BoxLogin>
-        <div className="px-20 bg-white h-full relative flex-column flex-center">
+        <div className="px-20 bg-white relative flex-column flex-center">
           <Typography component="h1" variant="h4">
             <span className={classes.titleLogin}>{t('Page.Login.Name')}</span>
           </Typography>

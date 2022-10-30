@@ -1,15 +1,15 @@
-import adminStyle from "assets/css/admin";
-import commonStyle from "assets/css/common";
-import positionStyle from "assets/css/position";
-import spacingStyle from "assets/css/spacing";
-import textStyle from "assets/css/text";
-import variablesStyle from "assets/css/variables";
-import { FC, memo } from "react";
-import '../../assets/css/vendor'
+import adminStyle from 'assets/css/admin';
+import commonStyle from 'assets/css/common';
+import positionStyle from 'assets/css/position';
+import spacingStyle from 'assets/css/spacing';
+import textStyle from 'assets/css/text';
+import variablesStyle from 'assets/css/variables';
+import { FC, memo } from 'react';
+import '../../assets/css/vendor';
 
 const GlobalCss: FC = () => {
-  variablesStyle();
   commonStyle();
+  variablesStyle();
   textStyle();
   positionStyle();
   adminStyle();
@@ -18,4 +18,4 @@ const GlobalCss: FC = () => {
   return null;
 };
 
-export default memo(GlobalCss)
+export default memo(GlobalCss);

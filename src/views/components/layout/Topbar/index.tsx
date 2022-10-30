@@ -1,4 +1,4 @@
-import { AppBar, Toolbar } from '@mui/material';
+import { AppBar, Box, Toolbar } from '@mui/material';
 import clsx from 'clsx';
 import topbarStyle from './style';
 // import ToggleSidebar from './ToggleSidebar';
@@ -14,11 +14,11 @@ const Topbar = () => {
     <AppBar position="fixed" className={cls}>
       <Toolbar className="admin-topbar-toolbar">
         {/* <ToggleSidebar /> */}
-        <div className="admin-topbar-toolbar-box flex justify-between items-center wh-full">
+        <Box className="admin-topbar-toolbar-box w-full d-flex">
           <TopbarLeft />
           <TopbarCenter />
           <TopbarRight />
-        </div>
+        </Box>
       </Toolbar>
     </AppBar>
   );
