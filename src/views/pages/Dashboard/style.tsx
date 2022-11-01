@@ -1,4 +1,4 @@
-import { Button, styled } from '@mui/material';
+import { Button, styled, Typography } from '@mui/material';
 import Box from '@mui/material/Box';
 
 export const CardDashboard = styled(Box)(() => ({
@@ -28,8 +28,40 @@ export const ButtonReport = styled(Button)(() => ({
 
 export const BoxOverview = styled(Box)(() => ({
   marginTop: '12px',
-  backgroundColor: 'var(--admin-white)',
   display: 'flex',
-  height: '165px',
+  flexDirection: 'column',
+  height: '180px',
   borderRadius: '8px',
+  backgroundColor: '#fff',
+  padding: '20px',
+}));
+
+export const BoxStatistis = styled(Box)(() => ({
+  display: 'flex',
+  flexDirection: 'column',
+  backdropFilter: 'blur(20px)',
+  borderRadius: '8px',
+}));
+
+export const TextTitleStatis = styled(Typography)(() => ({
+  fontSize: '14px',
+  marginLeft: '20px',
+  paddingTop: '12px',
+  color: '#696964',
+}));
+
+export const NumberStatis = styled(Typography)(() => ({
+  fontSize: '36px',
+  fontWeight: 700,
+  marginLeft: '12px',
+}));
+
+export const BoxNumberStatis = styled(Box)(() => ({
+  display: 'flex',
+  flexDirection: 'row',
+  alignItems: 'center',
+  marginRight: '20px',
+  justifyContent: 'end',
+  height: '100%',
+  color: '#353535',
 }));

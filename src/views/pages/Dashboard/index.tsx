@@ -1,7 +1,8 @@
 import Box from '@mui/material/Box';
 import React from 'react';
-import { BoxOverview, ButtonReport, CardDashboard } from './style';
+import { ButtonReport, CardDashboard } from './style';
 import FileDownloadIcon from '@mui/icons-material/FileDownload';
+import Statistical from './Statistical';
 
 type Props = {};
 
@@ -15,7 +16,7 @@ const Dashboard = (props: Props) => {
         </ButtonReport>
       </Box>
 
-      <BoxOverview className="w-full"></BoxOverview>
+      <Statistical />
     </CardDashboard>
   );
 };

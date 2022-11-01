@@ -6,7 +6,12 @@
       "ForgotPassword": "Quên mật khẩu?"
     },
     "Dashboard": {
-      "Name": "Thống kê"
+      "Name": "Thống kê",
+      "StatisticDay": "Thống kê hàng ngày",
+      "SumIncome": "Tổng doanh thu",
+      "Profit": "Lợi nhuận",
+      "InsuranceProduct": "Sản phẩm bảo hành",
+      "Order": "Đơn hàng"
     },
     "Product": {
       "Name": "Quản lý sản phẩm"

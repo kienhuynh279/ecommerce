@@ -6,7 +6,12 @@
       "ForgotPassword": "Forgot Password?"
     },
     "Dashboard": {
-      "Name": "Dashboard"
+      "Name": "Dashboard",
+      "StatisticDay": "Statistic Day",
+      "SumIncome": "Sum Income",
+      "Profit": "Profit",
+      "InsuranceProduct": "Insurance Product",
+      "Order": "Order"
     },
     "Product": {
       "Name": "Product Manager"
