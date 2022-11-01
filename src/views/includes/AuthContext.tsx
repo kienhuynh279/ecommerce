@@ -16,6 +16,11 @@ const AuthContext = (props: AuthContextProps) => {
   if (!!userAuth && matchPath(PageURL.Login, location.pathname)) {
     return <Navigate to="/dashboard" />;
   }
+
+  if (location.pathname === '/') {
+    return <Navigate to="/dashboard" />;
+  }
+
   return <Fragment>{children}</Fragment>;
 };
 
