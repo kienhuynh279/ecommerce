@@ -20,7 +20,6 @@ const AuthContext = (props: AuthContextProps) => {
   if (location.pathname === '/') {
     return <Navigate to="/dashboard" />;
   }
-
   return <Fragment>{children}</Fragment>;
 };
 

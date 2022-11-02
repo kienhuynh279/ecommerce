@@ -7,11 +7,13 @@ import clsx from 'clsx';
 import {
   ChangeEvent,
   forwardRef,
-  ForwardRefRenderFunction, memo, ReactNode,
+  ForwardRefRenderFunction,
+  memo,
+  ReactNode,
   useEffect,
   useImperativeHandle,
   useRef,
-  useState
+  useState,
 } from 'react';
 import { SxBaseApp } from 'types/app';
 import { diffArray } from 'utils';
@@ -48,23 +50,20 @@ export interface SelectProps {
   sx?: SxProps<Theme>;
 }
 
-export interface SelectComponent extends ForwardRefRenderFunction<SelectRef, SelectProps> { }
+export interface SelectComponent extends ForwardRefRenderFunction<SelectRef, SelectProps> {}
 
 export const SxSelectDisabled: SxBaseApp = {
-  "& .Mui-disabled": {
+  '& .Mui-disabled': {
     WebkitTextFillColor: 'var(--admin-disable)',
-    "& .MuiInput-input": {
-      backgroundColor: "#d7d8e4 !important",
-      color: "#353535",
-      fontWeight: 500
-    }
+    '& .MuiInput-input': {
+      backgroundColor: '#d7d8e4 !important',
+      color: '#353535',
+      fontWeight: 500,
+    },
   },
-
-}
-
+};
 
 const Select: SelectComponent = (props, ref) => {
-
   const {
     className,
     // colorLabel,
@@ -122,7 +121,7 @@ const Select: SelectComponent = (props, ref) => {
     },
     setMessage(msg) {
       setSelectMessage(msg);
-    }
+    },
   }));
 
   const error = Boolean(SelectMessage).valueOf();
@@ -131,24 +130,28 @@ const Select: SelectComponent = (props, ref) => {
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     if (!handleValidValueBeforeOnChange(e.target.value)) return;
     setSelectedValue(e.target.value);
-  }
+  };
 
-  const existValue = SelectOptions?.find(o => o.value === SelectedValue);
+  const existValue = SelectOptions?.find((o) => o.value === SelectedValue);
 
   return (
-    <FormControl className={selectClass} fullWidth={fullWidth} sx={{
-      '& .MuiSelect-select': {
-        pr: '30px!important',
-        '& span': {
-          color: "#35353580",
-          fontSize: "14px"
-        }
-      },
-      '& .MuiSelect-icon': {
-        mr: '9px',
-      },
-      ...sx
-    }}>
+    <FormControl
+      className={selectClass}
+      fullWidth={fullWidth}
+      sx={{
+        '& .MuiSelect-select': {
+          pr: '30px!important',
+          '& span': {
+            color: '#35353580',
+            fontSize: '14px',
+          },
+        },
+        '& .MuiSelect-icon': {
+          mr: '9px',
+        },
+        ...sx,
+      }}
+    >
       {!!label && <h4 className="ellipsis">{label}</h4>}
       <TextField
         error={error}
@@ -161,33 +164,36 @@ const Select: SelectComponent = (props, ref) => {
         disabled={disabled}
         SelectProps={{
           multiple: multiple,
-          placeholder: placeholder
+          placeholder: placeholder,
         }}
         sx={disabled === true ? SxSelectDisabled : sx}
-
       >
-        {
-          !!placeholder &&
-          <MenuItem sx={{ fontSize: "14px" }} disabled value="-1" key="-1" selected>
-            <span >{placeholder}</span>
+        {!!placeholder && (
+          <MenuItem sx={{ fontSize: '14px' }} disabled value="-1" key="-1" selected>
+            <span>{placeholder}</span>
           </MenuItem>
-        }
+        )}
         {SelectOptions?.map((option) => {
           if (option.isGroup) {
-            return <ListSubheader key={option.value}>
-              {option.label ?? option.value}
-            </ListSubheader>
+            return <ListSubheader key={option.value}>{option.label ?? option.value}</ListSubheader>;
           }
 
-          return <MenuItem sx={{}} key={option.value} value={option.value} selected={option.value === SelectedValue} disabled={option.disabled} className={clsx(className, 'text-14 text-normal')}>
-            {option.label ?? option.value}
-          </MenuItem>
+          return (
+            <MenuItem
+              sx={{}}
+              key={option.value}
+              value={option.value}
+              selected={option.value === SelectedValue}
+              disabled={option.disabled}
+              className={clsx(className, 'text-14 text-normal')}
+            >
+              {option.label ?? option.value}
+            </MenuItem>
+          );
         })}
       </TextField>
-
     </FormControl>
   );
-
-}
+};
 
 export default memo(forwardRef(Select));
