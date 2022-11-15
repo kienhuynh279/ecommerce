@@ -32,8 +32,8 @@ function App() {
                 <Routes>
                   <Route path="/*" element={<Guard />}></Route>
                   {PublicRoute.map((route, i) => {
-                    const { path, element: AuthComponent } = route
-                    return <Route key={i} path={path} element={AuthComponent ? <AuthComponent /> : null}></Route>
+                    const { path, element: AuthComponent } = route;
+                    return <Route key={i} path={path} element={AuthComponent ? <AuthComponent /> : null}></Route>;
                   })}
                 </Routes>
               </AuthContext>
@@ -41,7 +41,7 @@ function App() {
           </Suspense>
         </ThemeProvider>
       </I18nextProvider>
-    </Provider >
+    </Provider>
   );
 }
 

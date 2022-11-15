@@ -3,6 +3,7 @@ import React from 'react';
 import { ButtonReport, CardDashboard } from './style';
 import FileDownloadIcon from '@mui/icons-material/FileDownload';
 import Statistical from './Statistical';
+import ProductImport from './ProductImport';
 
 type Props = {};
 
@@ -17,6 +18,8 @@ const Dashboard = (props: Props) => {
       </Box>
 
       <Statistical />
+
+      <ProductImport />
     </CardDashboard>
   );
 };

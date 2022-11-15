@@ -33,6 +33,23 @@ const commonStyle = makeStyles(() => ({
     '.btn': {
       marginBottom: '20px',
     },
+    '.table-scrollcustom': {
+      '& .MuiTable-root': {
+        minWidth: '855px',
+      },
+      '&::-webkit-scrollbar': {
+        width: '5px',
+        height: '5px',
+      },
+      '&::-webkit-scrollbar-track': {
+        borderRadius: '20px',
+        marginTop: '55px',
+      },
+      '&::-webkit-scrollbar-thumb': {
+        borderRadius: '20px',
+        backgroundColor: '#d5d5d5',
+      },
+    },
   },
 })) as Function;
 
