@@ -5,7 +5,6 @@ const sidebarStyle = makeStyles(() => ({
     backgroundColor: 'var(--admin-white)',
     width: 'var(--admin-sidebar-width)',
     color: '#fff !important',
-    // transition: 'all ease 0.3s',
     zIndex: 1200,
 
     '& .admin-sidebar-brand': {
@@ -172,7 +171,7 @@ const sidebarStyle = makeStyles(() => ({
           backgroundColor: 'var(--admin-white)',
           color: 'var(--admin-primary)',
           margin: '0 4px 4px 4px',
-          transition: 'all 0.35s ease-in-out',
+          transition: 'all 0.3s ease-in-out',
         },
 
         '&.active': {
@@ -194,6 +193,11 @@ const sidebarStyle = makeStyles(() => ({
       '& .admin-topbar': {
         width: 'calc(100% - var(--admin-sidebar-collapsed-width))',
         left: 'var(--admin-sidebar-collapsed-width)',
+      },
+
+      '& .admin-topbar-toolbar': {
+        marginLeft: '0 !important',
+        transition: 'none !important',
       },
 
       '& .admin-sidebar-brand': {

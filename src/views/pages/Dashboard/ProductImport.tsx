@@ -6,104 +6,37 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Typography from '@mui/material/Typography';
-import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 const tableData = [
   {
-    duaration: '123',
-    msnv: '1',
-    name: 'Quách Công Thương',
-    dvkd: 'Hội sở',
-    program: 'Los',
+    name: 'Ống 27 BM',
+    code: '27BM',
+    quantity: 50,
     status: 1,
   },
   {
-    duaration: '123',
-    msnv: '1',
-    name: 'Quách Công Thương',
-    dvkd: 'Hội sở',
-    program: 'Los',
-    status: 1,
-  },
-  {
-    duaration: '123',
-    msnv: '1',
-    name: 'Quách Công Thương',
-    dvkd: 'Hội sở',
-    program: 'Los',
+    name: 'Ống 34 BM',
+    code: '34BM',
+    quantity: 20,
     status: 0,
   },
   {
-    duaration: '123',
-    msnv: '1',
-    name: 'Quách Công Thương',
-    dvkd: 'Hội sở',
-    program: 'Los',
+    name: 'Ống 27 ST',
+    code: '27ST',
+    quantity: 20,
     status: 0,
   },
   {
-    duaration: '123',
-    msnv: '1',
-    name: 'Quách Công Thương',
-    dvkd: 'Hội sở',
-    program: 'Los',
+    name: 'Co 27 BM',
+    code: 'CO27BM',
+    quantity: 200,
     status: 1,
   },
   {
-    duaration: '123',
-    msnv: '1',
-    name: 'Quách Công Thương',
-    dvkd: 'Hội sở',
-    program: 'Los',
-    status: 1,
-  },
-  {
-    duaration: '123',
-    msnv: '1',
-    name: 'Quách Công Thương',
-    dvkd: 'Hội sở',
-    program: 'Los',
-    status: 1,
-  },
-  {
-    duaration: '123',
-    msnv: '1',
-    name: 'Quách Công Thương',
-    dvkd: 'Hội sở',
-    program: 'Los',
-    status: 1,
-  },
-  {
-    duaration: '123',
-    msnv: '1',
-    name: 'Quách Công Thương',
-    dvkd: 'Hội sở',
-    program: 'Los',
-    status: 1,
-  },
-  {
-    duaration: '123',
-    msnv: '1',
-    name: 'Quách Công Thương',
-    dvkd: 'Hội sở',
-    program: 'Los',
-    status: 0,
-  },
-  {
-    duaration: '123',
-    msnv: '1',
-    name: 'Quách Công Thương',
-    dvkd: 'Hội sở',
-    program: 'Los',
-    status: 1,
-  },
-  {
-    duaration: '123',
-    msnv: '1',
-    name: 'Quách Công Thương',
-    dvkd: 'Hội sở',
-    program: 'Los',
+    name: 'T 27 BM',
+    code: 'T27BM',
+    quantity: 20,
     status: 0,
   },
 ];
@@ -113,15 +46,13 @@ function ProductImport() {
   const THeader = () => (
     <TableHead>
       <TableRow>
-        <TableCell align="center" width={'7%'}>
+        <TableCell align="center" width={'10%'}>
           {t('STT')}
         </TableCell>
-        <TableCell width={'13%'}>{t('Thời gian')}</TableCell>
-        <TableCell width={'10%'}>{t('MSNV')}</TableCell>
-        <TableCell width={'20%'}>{t('Họ và Tên')}</TableCell>
-        <TableCell width={'18%'}>{t('ĐVKD')}</TableCell>
-        <TableCell width={'15%'}>{t('Chương Trình')}</TableCell>
-        <TableCell width={'15%'}>{t('Trạng thái')}</TableCell>
+        <TableCell width={'40%'}>{t('Tên sản phẩm')}</TableCell>
+        <TableCell width={'15%'}>{t('MSSP')}</TableCell>
+        <TableCell width={'15%'}>{t('Số lượng còn lại')}</TableCell>
+        <TableCell width={'20%'}>{t('Trạng thái')}</TableCell>
       </TableRow>
     </TableHead>
   );
@@ -130,34 +61,30 @@ function ProductImport() {
     <>
       {tableData.map((i, index) => (
         <TableRow key={index}>
-          <TableCell align="center" width={'7%'}>
-            {index}
+          <TableCell align="center" width={'10%'}>
+            {index + 1}
           </TableCell>
-          <TableCell width={'13%'}>{i.duaration}</TableCell>
           <TableCell
             sx={{
               textDecoration: 'underline',
               color: '#1825aa',
               fontWeight: 500,
             }}
-            width={'10%'}
+            width={'40%'}
           >
-            {i.msnv}
+            {i.name}
           </TableCell>
-          <TableCell width={'20%'}>{i.name}</TableCell>
-          <TableCell sx={{ textDecoration: 'underline' }} width={'18%'}>
-            {i.dvkd}
-          </TableCell>
-          <TableCell width={'15%'}>{i.program}</TableCell>
+          <TableCell width={'15%'}>{i.code}</TableCell>
+          <TableCell width={'15%'}>{i.quantity}</TableCell>
           <TableCell
             sx={{
               fontSize: '14px',
               fontWeight: 600,
               color: i.status === 0 ? '#eb0029' : '#0d9827',
             }}
-            width={'15 % '}
+            width={'20% '}
           >
-            {i.status === 0 ? 'Thất bại' : 'Thành Công'}
+            {i.status === 0 ? 'Gấp' : 'Bình thường'}
           </TableCell>
         </TableRow>
       ))}
@@ -169,7 +96,6 @@ function ProductImport() {
         mt: 2.5,
         boxShadow: '0 3px 6px 0 rgb(0 0 0 / 16%)',
         backgroundColor: '#fff',
-        height: '480px',
         padding: '12px',
         borderRadius: '8px',
       }}
@@ -186,8 +112,8 @@ function ProductImport() {
       <TableContainer
         className="table-scrollcustom"
         sx={{
-          maxHeight: '410px',
-          height: '410px',
+          maxHeight: '300px',
+          height: '300px',
         }}
       >
         <Table stickyHeader sx={{ backgroundColor: '#fff', tableLayout: 'fixed' }}>

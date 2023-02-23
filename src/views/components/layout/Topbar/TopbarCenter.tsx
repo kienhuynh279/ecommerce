@@ -3,7 +3,7 @@ import React from 'react';
 type Props = {};
 
 const TopbarCenter = (props: Props) => {
-  return <div></div>;
+  return <>Cửa Hàng Điện Nước Hiếu</>;
 };
 
 export default TopbarCenter;

@@ -2,7 +2,6 @@ import { Button, styled, Typography } from '@mui/material';
 import Box from '@mui/material/Box';
 
 export const CardDashboard = styled(Box)(() => ({
-  height: '100vh',
   margin: '0px',
 }));
 
@@ -41,6 +40,7 @@ export const BoxStatistis = styled(Box)(() => ({
   flexDirection: 'column',
   backdropFilter: 'blur(20px)',
   borderRadius: '8px',
+  width: '100%',
 }));
 
 export const TextTitleStatis = styled(Typography)(() => ({
@@ -60,8 +60,9 @@ export const BoxNumberStatis = styled(Box)(() => ({
   display: 'flex',
   flexDirection: 'row',
   alignItems: 'center',
-  marginRight: '20px',
-  justifyContent: 'end',
+  justifyContent: 'flex-end',
+  paddingRight: '12px',
   height: '100%',
+  width: '100%',
   color: '#353535',
 }));
