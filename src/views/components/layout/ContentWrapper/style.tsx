@@ -10,17 +10,12 @@ const wrapperStyle = makeStyles(() => ({
       '&>div:nth-of-type(2)': {
         visibility: 'hidden',
       },
-      // '&>div:nth-of-type(3)': {
-      //   visibility: 'hidden',
-      // }
     },
   },
 
   wrapper: {
-    padding: '16px',
     height: 'auto !important',
     minHeight: '100% !important',
-    // overflowX: 'hidden'
   },
 })) as Function;
 

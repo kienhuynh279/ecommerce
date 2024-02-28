@@ -1,4 +1,3 @@
-import Box from '@mui/material/Box';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -7,6 +6,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Typography from '@mui/material/Typography';
 import { useTranslation } from 'react-i18next';
+import { BoxRoot } from './style';
 
 const tableData = [
   {
@@ -39,6 +39,30 @@ const tableData = [
     quantity: 20,
     status: 0,
   },
+  {
+    name: 'T 27 BM',
+    code: 'T27BM',
+    quantity: 20,
+    status: 0,
+  },
+  {
+    name: 'T 27 BM',
+    code: 'T27BM',
+    quantity: 20,
+    status: 0,
+  },
+  {
+    name: 'T 27 BM',
+    code: 'T27BM',
+    quantity: 20,
+    status: 0,
+  },
+  {
+    name: 'T 27 BM',
+    code: 'T27BM',
+    quantity: 20,
+    status: 0,
+  },
 ];
 
 function ProductImport() {
@@ -49,10 +73,10 @@ function ProductImport() {
         <TableCell align="center" width={'10%'}>
           {t('STT')}
         </TableCell>
-        <TableCell width={'40%'}>{t('Tên sản phẩm')}</TableCell>
-        <TableCell width={'15%'}>{t('MSSP')}</TableCell>
-        <TableCell width={'15%'}>{t('Số lượng còn lại')}</TableCell>
-        <TableCell width={'20%'}>{t('Trạng thái')}</TableCell>
+        <TableCell width="40%">{t('Tên sản phẩm')}</TableCell>
+        <TableCell width="15%">{t('MSSP')}</TableCell>
+        <TableCell width="15%">{t('Số lượng còn lại')}</TableCell>
+        <TableCell width="20%">{t('Trạng thái')}</TableCell>
       </TableRow>
     </TableHead>
   );
@@ -74,8 +98,8 @@ function ProductImport() {
           >
             {i.name}
           </TableCell>
-          <TableCell width={'15%'}>{i.code}</TableCell>
-          <TableCell width={'15%'}>{i.quantity}</TableCell>
+          <TableCell width="15%">{i.code}</TableCell>
+          <TableCell width="15%">{i.quantity}</TableCell>
           <TableCell
             sx={{
               fontSize: '14px',
@@ -91,29 +115,15 @@ function ProductImport() {
     </>
   );
   return (
-    <Box
-      sx={{
-        mt: 2.5,
-        boxShadow: '0 3px 6px 0 rgb(0 0 0 / 16%)',
-        backgroundColor: '#fff',
-        padding: '12px',
-        borderRadius: '8px',
-      }}
-    >
-      <Typography
-        sx={{
-          fontSize: '24px',
-          fontWeight: 700,
-          paddingLeft: '10px',
-        }}
-      >
+    <BoxRoot>
+      <Typography fontSize="24px" fontWeight={700} pl="10px">
         Hàng cần nhập
       </Typography>
       <TableContainer
         className="table-scrollcustom"
         sx={{
-          maxHeight: '300px',
-          height: '300px',
+          maxHeight: '500px',
+          height: '500px',
         }}
       >
         <Table stickyHeader sx={{ backgroundColor: '#fff', tableLayout: 'fixed' }}>
@@ -123,7 +133,7 @@ function ProductImport() {
           </TableBody>
         </Table>
       </TableContainer>
-    </Box>
+    </BoxRoot>
   );
 }
 

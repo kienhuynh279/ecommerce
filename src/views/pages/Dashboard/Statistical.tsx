@@ -17,7 +17,6 @@ const Statistical = (props: Props) => {
           <BoxStatistis sx={{ backgroundColor: 'rgb(75, 73, 172, 0.4)' }} className="wh-full">
             <TextTitleStatis>{t('Page.Dashboard.SumIncome')}</TextTitleStatis>
             <BoxNumberStatis>
-              {/* <MonetizationOnOutlinedIcon sx={{ fontSize: '3.5em' }} /> */}
               <NumberStatis>20.000.000</NumberStatis>
             </BoxNumberStatis>
           </BoxStatistis>
@@ -27,7 +26,6 @@ const Statistical = (props: Props) => {
           <BoxStatistis sx={{ backgroundColor: 'rgb(182, 116, 196, 0.4)' }} className="wh-full">
             <TextTitleStatis>{t('Page.Dashboard.Profit')}</TextTitleStatis>
             <BoxNumberStatis>
-              {/* <MonetizationOnOutlinedIcon sx={{ fontSize: '3.5em' }} /> */}
               <NumberStatis>2.000.000</NumberStatis>
             </BoxNumberStatis>
           </BoxStatistis>
@@ -37,7 +35,6 @@ const Statistical = (props: Props) => {
           <BoxStatistis sx={{ backgroundColor: 'rgb(230, 220, 48, 0.4)' }} className="wh-full">
             <TextTitleStatis>{t('Page.Dashboard.InsuranceProduct')}</TextTitleStatis>
             <BoxNumberStatis>
-              {/* <CategoryOutlinedIcon sx={{ fontSize: '3.5em' }} /> */}
               <NumberStatis>10</NumberStatis>
             </BoxNumberStatis>
           </BoxStatistis>
@@ -47,7 +44,6 @@ const Statistical = (props: Props) => {
           <BoxStatistis sx={{ backgroundColor: 'rgb(85, 235, 80, 0.4)' }} className="wh-full">
             <TextTitleStatis>{t('Page.Dashboard.Order')}</TextTitleStatis>
             <BoxNumberStatis>
-              {/* <ShoppingCartOutlinedIcon sx={{ fontSize: '3.5em' }} /> */}
               <NumberStatis>55</NumberStatis>
             </BoxNumberStatis>
           </BoxStatistis>
